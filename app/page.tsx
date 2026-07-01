@@ -61,18 +61,20 @@ export default function Home() {
             src="/cow-bg-hero.png"
             alt=""
             draggable={false}
-            className="absolute inset-x-0 bottom-0 w-full h-full object-cover object-bottom opacity-100"
+            className="absolute inset-x-0 bottom-0 w-full h-full object-cover object-bottom opacity-45"
           />
-          {/* warm golden wash — echoes the desert gold of the Saqr emblem */}
+          {/* Maroon brand wash — ties the pasture to the Saqr burgundy */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 mix-blend-soft-light bg-gradient-to-br from-[#C9A24B]/40 via-[#D8B45E]/25 to-[#A98233]/35"
+            className="absolute inset-0 mix-blend-multiply bg-gradient-to-br from-[#8A1538]/35 via-[#9E2447]/22 to-[#6E1230]/45"
           />
-          {/* extra gold tint, multiplied for a sun-warmed paddock tone */}
+          {/* Soft gold glow keeps a warm Saqr accent */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 mix-blend-multiply bg-gradient-to-b from-transparent via-[#E7D2A0]/15 to-[#C9A24B]/15"
+            className="absolute inset-0 mix-blend-soft-light bg-gradient-to-t from-[#C9A24B]/28 via-transparent to-[#C9A24B]/12"
           />
+          {/* Cream veil — lifts the whole field lighter and more subtle */}
+          <div aria-hidden="true" className="absolute inset-0 bg-[#FAF6EF]/35" />
           {/* Fade the top into the cream so the nav + title stay clean */}
           <div className="absolute inset-x-0 top-0 h-[26rem] bg-gradient-to-b from-[#FAF6EF] via-[#FAF6EF]/60 to-transparent" />
           {/* Soften the bottom edge back to cream before the marquee */}
@@ -107,7 +109,7 @@ export default function Home() {
               <p className="mt-8 max-w-xl text-[14.5px] leading-relaxed text-[#FAF6EF]/70">
                 Saqr brings Qatar a new standard in premium meat — 100% Halal-certified beef
                 and lamb, sourced from trusted farms, slaughtered strictly to Zabiha rites and
-                butchered by master craftsmen here in Doha.
+                cut by master butchers here in Doha.
               </p>
             </div>
 
@@ -115,7 +117,7 @@ export default function Home() {
             <div className="border-y border-white/15 divide-y divide-white/15">
               {[
                 { n: "01", t: "Halal, always", d: "Zabiha-certified, no exceptions." },
-                { n: "02", t: "Owned end-to-end", d: "Sourcing, slaughter, butchery, delivery." },
+                { n: "02", t: "Owned end-to-end", d: "Sourcing, slaughter, cutting, delivery." },
                 { n: "03", t: "Our own table", d: "We sell only what we'd serve at home." },
               ].map((p) => (
                 <div key={p.n} className="flex items-baseline gap-5 py-5">
@@ -147,7 +149,7 @@ export default function Home() {
             <div className="mt-6 max-w-xl space-y-4 font-[var(--font-serif)] text-[15px] leading-relaxed text-[#241B16]/70">
               <p>
                 <span className="font-semibold text-[#241B16]">Saqr</span> (صقر) supplies 100% Halal-certified beef
-                and lamb to homes, hotels and restaurants across Qatar — sourced with care, butchered with craft,
+                and lamb to homes, hotels and restaurants across Qatar — sourced with care, cut with craft,
                 delivered with speed.
               </p>
               <p>
@@ -176,11 +178,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* numbered stepper — replaces the arrow-pill chain */}
+        {/* numbered stepper — swipeable carousel on mobile, static grid on sm+ */}
         <div className="reveal mt-16 border-t border-[#8A1538]/15 pt-10">
-          <div className="grid gap-y-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-6">
-            {["Trusted Farms", "Halal Slaughter", "Expert Butchery", "Cold Chain", "Doha Delivery"].map((step, i) => (
-              <div key={step} className="relative flex flex-col gap-3 lg:pr-6">
+          <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
+            {["Trusted Farms", "Halal Slaughter", "Master Butchers", "Cold Chain", "Doha Delivery"].map((step, i) => (
+              <div key={step} className="relative flex w-[70%] shrink-0 snap-start flex-col gap-3 sm:w-auto sm:shrink lg:pr-6">
                 <span className="font-[var(--font-display)] text-3xl font-bold text-[#8A1538]/25">0{i + 1}</span>
                 <span className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.1em] text-[#241B16]">{step}</span>
                 {i < 4 && <span aria-hidden className="absolute right-0 top-4 hidden h-px w-6 bg-[#C9A24B] lg:block" />}
@@ -225,7 +227,7 @@ export default function Home() {
               </VanishText>
             </h3>
             <p className="max-w-xl font-[var(--font-serif)] text-[14px] leading-relaxed text-gray-600">
-              Every animal is hand-slaughtered to strict Zabiha rites — facing the Qiblah, with the name of Allah pronounced — under qualified Islamic supervision. Nothing leaves our butchery without full Halal assurance. It is the first promise of the Saqr name, never an afterthought.
+              Every animal is hand-slaughtered to strict Zabiha rites — facing the Qiblah, with the name of Allah pronounced — under qualified Islamic supervision. Nothing leaves our facility without full Halal assurance. It is the first promise of the Saqr name, never an afterthought.
             </p>
 
             <div className="mt-9 grid gap-4 sm:grid-cols-2">
@@ -260,8 +262,8 @@ export default function Home() {
           style={{ background: "radial-gradient(circle at 78% 28%, rgba(138,21,56,0.20), transparent 55%)" }}
         />
         <div className="relative grid lg:grid-cols-2">
-          {/* LEFT — content */}
-          <div className="reveal flex flex-col justify-center px-6 py-20 sm:py-24 lg:py-28">
+          {/* LEFT — content (below the image on mobile) */}
+          <div className="reveal order-2 flex flex-col justify-center px-6 py-20 sm:py-24 lg:order-1 lg:py-28">
             <div className="mx-auto w-full max-w-xl lg:ml-auto lg:mr-0 lg:max-w-lg lg:pr-14">
               <span className="font-[var(--font-display)] text-[13px] font-bold uppercase tracking-[0.4em] text-[#E0C074]">
                 Quality · الجودة
@@ -272,7 +274,7 @@ export default function Home() {
               <p className="mt-6 text-[14.5px] leading-relaxed text-[#FAF6EF]/70">
                 Marbling — the fine web of fat within the muscle — is the key to flavour, juiciness and aroma.
                 Every Saqr carcass is hand-assessed for marble score and selected against strict premium-grade
-                standards, then handled on an unbroken cold chain from our butchery to your door.
+                standards, then handled on an unbroken cold chain from our facility to your door.
               </p>
 
               {/* metric rows */}
@@ -292,8 +294,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT — image bleeding to the edge */}
-          <div className="reveal relative min-h-[320px] lg:min-h-full">
+          {/* RIGHT — image bleeding to the edge (shown first on mobile) */}
+          <div className="reveal relative order-1 min-h-[320px] lg:order-2 lg:min-h-full">
             <img
               src="/images/steak-board.jpg"
               alt="Premium marbled steak on a board"
@@ -329,7 +331,7 @@ export default function Home() {
             },
             {
               img: "/images/ribeye.jpg",
-              step: "Butchered",
+              step: "Prepared",
               t: "Halal, cut with craft",
               d: "Slaughtered to strict Zabiha rites under qualified supervision, then broken down to order by master butchers in our Doha facility.",
             },
@@ -393,7 +395,7 @@ export default function Home() {
             {/* contact detail cards */}
             <div className="mt-8 space-y-3">
               {[
-                { label: "Showroom & Butchery", value: "Salwa Road, Doha, State of Qatar", icon: <MapPinIcon /> },
+                { label: "Showroom & Counter", value: "Salwa Road, Doha, State of Qatar", icon: <MapPinIcon /> },
                 { label: "WhatsApp & Phone", value: "+974 4000 1234", href: "https://wa.me/97440001234", icon: <PhoneIcon /> },
                 { label: "Email", value: "enquiries@saqr.qa", href: "mailto:enquiries@saqr.qa", icon: <MailIcon /> },
                 { label: "Business Hours", value: "Sun–Thu · 8:00–20:00 AST", icon: <ClockIcon /> },

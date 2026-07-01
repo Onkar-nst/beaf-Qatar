@@ -189,7 +189,7 @@ export default async function CutDetailPage({
               <h3 className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#241B16]/70">Supplied to</h3>
               <p className="mt-2 text-[14px] text-[#241B16]/80">{SUPPLY_CHANNELS.join(" · ")}</p>
               <p className="mt-4 font-[var(--font-serif)] text-[13px] leading-relaxed text-[#241B16]/55">
-                Cut and packed to your specification at Saqr&apos;s own butchery in Doha —
+                Cut and packed to your specification at Saqr&apos;s own facility in Doha —
                 sourced, Halal-slaughtered and prepared to order.
               </p>
             </div>

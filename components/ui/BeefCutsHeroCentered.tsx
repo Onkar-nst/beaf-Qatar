@@ -175,20 +175,11 @@ export default function BeefCutsHeroCentered() {
       {/* Pasture background now lives in the page-level wrapper so it can run
           continuously from the hero down to the marquee. */}
 
-      {/* ─── Top Spacer for Fixed Navbar ─── */}
-      <div className="h-28 lg:h-32 w-full" />
+      {/* ─── Top Spacer for Fixed Navbar (extra breathing room above the cow) ─── */}
+      <div className="h-36 lg:h-52 w-full" />
 
       {/* ─── Main Stage ─── */}
       <div className="relative w-full max-w-7xl mx-auto px-6 z-10">
-        {/* Decorative cleaver — far top-right */}
-        <img
-          src="/images/cleaver.png"
-          alt=""
-          aria-hidden="true"
-          className="hidden lg:block absolute right-8 top-0 w-32 object-contain rotate-[18deg] opacity-80 select-none pointer-events-none drop-shadow-md z-30 reveal"
-          draggable={false}
-        />
-
         {/* Two columns — cow on the left, headline + prompt on the right */}
         <div className="grid lg:grid-cols-2 items-center gap-8 lg:gap-14">
 
@@ -289,13 +280,14 @@ export default function BeefCutsHeroCentered() {
             <div className="mt-8">
             {!selectedCut ? (
               <div className="relative">
-                {/* Hand-drawn curly arrow */}
+                {/* Curly arrow with the cleaver sitting beside it */}
+                <div className="flex items-center gap-3 mb-5">
                 <svg
                   width="100"
                   height="70"
                   viewBox="0 0 120 80"
                   fill="none"
-                  className="text-[#8A1538] mb-5 select-none pointer-events-none"
+                  className="text-[#8A1538] shrink-0 select-none pointer-events-none"
                 >
                   <path
                     d="M110 12 C 100 4, 90 6, 84 16 C 76 30, 78 52, 66 52 C 54 52, 52 30, 62 22 C 72 14, 76 32, 66 44 C 56 56, 36 56, 18 52"
@@ -317,6 +309,15 @@ export default function BeefCutsHeroCentered() {
                   <line x1="24" y1="52" x2="20" y2="55" stroke="currentColor" strokeWidth="1.2" />
                   <line x1="22" y1="55" x2="18" y2="52" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
+                  {/* Decorative cleaver — now sits beside the arrow */}
+                  <img
+                    src="/images/cleaver.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-24 sm:w-28 object-contain rotate-[10deg] opacity-85 drop-shadow-md select-none pointer-events-none"
+                    draggable={false}
+                  />
+                </div>
 
                 {/* Wavy accent line */}
                 <svg width="50" height="8" viewBox="0 0 50 8" className="text-[#8A1538] mb-4">

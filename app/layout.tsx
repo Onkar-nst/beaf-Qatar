@@ -26,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Saqr — Premium Halal Meats of Qatar",
   description:
-    "Saqr (صقر) — premium, 100% Halal-certified beef and lamb, butchered and delivered across Qatar. Source to table, with a single standard of excellence.",
+    "Saqr (صقر) — premium, 100% Halal-certified beef and lamb, expertly cut and delivered across Qatar. Source to table, with a single standard of excellence.",
   icons: {
     icon: "/images/saqr-emblem.svg",
     shortcut: "/images/saqr-emblem.svg",
